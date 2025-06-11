@@ -141,7 +141,7 @@ def embaralhar_animado():
 if not st.session_state.embaralhado and not st.session_state.embaralhando:
     cols = st.columns([2, 3, 2])
     with cols[1]:
-        st.button("🔄 Embaralhar as caixinhas!", on_click=embaralhar_animado)
+        st.button("Embaralhar as caixinhas!", on_click=embaralhar_animado)
 
 elif st.session_state.embaralhando:
     placeholder = st.empty()
