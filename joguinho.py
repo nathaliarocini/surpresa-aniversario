@@ -4,7 +4,7 @@ import time
 
 st.set_page_config(page_title="Surpresa de Aniversário!", page_icon="💛", layout="centered")
 
-# CSS global responsivo para desktop + mobile
+# CSS global responsivo para desktop + mobile (ajuste fino do título e botões)
 st.markdown("""
 <style>
 body, .stApp {
@@ -19,6 +19,7 @@ body, .stApp {
     margin-top: 24px;
     margin-bottom: 0.15em;
     letter-spacing: 1px;
+    word-break: break-word;
 }
 .emoji-cima {
     text-align: center;
@@ -56,6 +57,7 @@ body, .stApp {
     letter-spacing: 0.5px;
     margin: 0 !important;
     display: block !important;
+    word-break: break-word;
 }
 .stButton > button:hover {
     background: linear-gradient(90deg,#fff5ba,#ffe6c6 95%);
@@ -107,19 +109,22 @@ body, .stApp {
     min-height: 64px !important;
   }
   .titulo-festa {
-    font-size: 1.45em !important;
+    font-size: 1.18em !important;
     margin-top: 10px !important;
+    padding: 0 5vw;
+    word-break: break-word;
   }
   .texto-normal, .texto-sub {
-    font-size: 1em !important;
+    font-size: 0.99em !important;
     padding: 0 2vw;
   }
   .stButton > button {
-    width: 96vw !important;
-    font-size: 1em !important;
-    min-width: 90px !important;
+    width: 95vw !important;
+    font-size: 0.99em !important;
+    min-width: 85px !important;
     max-width: 97vw !important;
     margin: 0 auto !important;
+    word-break: break-word;
   }
   .centraliza-btn, .centraliza {
     margin: 0 !important;
