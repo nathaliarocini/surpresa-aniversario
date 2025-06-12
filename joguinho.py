@@ -4,7 +4,7 @@ import time
 
 st.set_page_config(page_title="Surpresa de Aniversário!", page_icon="💛", layout="centered")
 
-# CSS global responsivo para desktop + mobile (ajuste fino do título e botões)
+# CSS global responsivo para desktop + mobile (ajuste do "Embaralhando" também)
 st.markdown("""
 <style>
 body, .stApp {
@@ -97,8 +97,16 @@ body, .stApp {
     align-items: center;
     margin-bottom: 12px;
 }
-
-/* --------- Ajustes para MOBILE --------- */
+/* --------- Ajustes para o texto embaralhando --------- */
+.embaralhando-title {
+    font-size: 2.1em;
+    font-weight: bold;
+    color: #f3bb28;
+    margin-bottom: 7px;
+    letter-spacing: 1px;
+    word-break: break-word;
+    text-align: center;
+}
 @media (max-width: 600px) {
   .caixinha {
     min-width: unset !important;
@@ -129,6 +137,10 @@ body, .stApp {
   .centraliza-btn, .centraliza {
     margin: 0 !important;
     padding: 0 !important;
+  }
+  .embaralhando-title {
+    font-size: 1.1em !important;
+    padding: 0 3vw;
   }
 }
 </style>
@@ -176,7 +188,7 @@ def embaralhar_animado():
 if not st.session_state.embaralhado and not st.session_state.embaralhando:
     cols = st.columns([2, 3, 2])
     with cols[1]:
-        st.button("🔄 Embaralhar as caixinhas!", on_click=embaralhar_animado)
+        st.button("Embaralhar as caixinhas!", on_click=embaralhar_animado)
 
 elif st.session_state.embaralhando:
     placeholder = st.empty()
@@ -197,7 +209,7 @@ elif st.session_state.embaralhando:
                     box-shadow: 0 0 40px #ffe06633;
                     margin: 24px 0 8px 0;
                 '>
-                    <div style='font-size:2.1em; font-weight:bold; color:#f3bb28; margin-bottom:7px; letter-spacing:1px;'>
+                    <div class="embaralhando-title">
                         <span style="font-size:1.09em; margin-right:12px;"></span>
                         Embaralhando as surpresas...
                     </div>
