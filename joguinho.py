@@ -4,7 +4,7 @@ import time
 
 st.set_page_config(page_title="Surpresa de Aniversário!", page_icon="💛", layout="centered")
 
-# CSS global para visual igual ao print
+# CSS global responsivo para desktop + mobile
 st.markdown("""
 <style>
 body, .stApp {
@@ -95,12 +95,42 @@ body, .stApp {
     align-items: center;
     margin-bottom: 12px;
 }
+
+/* --------- Ajustes para MOBILE --------- */
+@media (max-width: 600px) {
+  .caixinha {
+    min-width: unset !important;
+    max-width: 98vw !important;
+    width: 98vw !important;
+    padding: 13px 4vw !important;
+    font-size: 1em !important;
+    min-height: 64px !important;
+  }
+  .titulo-festa {
+    font-size: 1.45em !important;
+    margin-top: 10px !important;
+  }
+  .texto-normal, .texto-sub {
+    font-size: 1em !important;
+    padding: 0 2vw;
+  }
+  .stButton > button {
+    width: 96vw !important;
+    font-size: 1em !important;
+    min-width: 90px !important;
+    max-width: 97vw !important;
+    margin: 0 auto !important;
+  }
+  .centraliza-btn, .centraliza {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
 </style>
 """, unsafe_allow_html=True)
 
 # Título e textos igual à imagem
 st.markdown('<div class="titulo-festa">Feliz aniversário, minha princesa!</div>', unsafe_allow_html=True)
-#st.markdown('<div class="emoji-cima">💛</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="texto-normal">Hoje é dia de comemorar do jeito que a gente gosta: com uma surpresa pra guardar pra sempre na memória.</div>',
     unsafe_allow_html=True,
@@ -141,7 +171,7 @@ def embaralhar_animado():
 if not st.session_state.embaralhado and not st.session_state.embaralhando:
     cols = st.columns([2, 3, 2])
     with cols[1]:
-        st.button("Embaralhar as caixinhas!", on_click=embaralhar_animado)
+        st.button("🔄 Embaralhar as caixinhas!", on_click=embaralhar_animado)
 
 elif st.session_state.embaralhando:
     placeholder = st.empty()
